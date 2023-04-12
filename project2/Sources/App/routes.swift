@@ -11,8 +11,9 @@ func routes(_ app: Application) throws {
         "Meet our great team"
     }
 
-    app.get("contact") { req async in
-        "Get in touch with us"
+    app.get("contact") { req -> EventLoopFuture<View> in
+        let context = [String: String]()
+        return req.view.render("contact", context)
     }
 }
 
