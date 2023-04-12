@@ -1,8 +1,10 @@
 import Vapor
+import Leaf
 
 func routes(_ app: Application) throws {
-    app.get { req async in
-        "Welcome to Millions Hairs"
+    app.get { req -> EventLoopFuture<View> in
+        let context = [String: String]()
+        return req.view.render("home", context)
     }
 
     app.get("staff") { req async -> String in
