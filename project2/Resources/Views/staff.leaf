@@ -8,6 +8,12 @@
 	<p>We didn't recognize that person.</p>
 #endif
 
+<p>Choose a staff member to view:</p>
+<ul>
+    #for(name in allNames):
+        <li><a href="http://localhost:8080/staff/#(name)">#capitalized(name)</a></li>
+    #endfor
+</ul>
 #extend("footer")
 </body>
 </html>

@@ -23,15 +23,16 @@ func routes(_ app: Application) throws {
         struct StaffView: Codable {
             var name: String?
             var bio: String?
+            var allNames: [String]
         }
 
         let context: StaffView
 
         // attempt to find a staff member by this name and fill in our struct
         if let bio = bios[name] {
-            context = StaffView(name: name, bio: bio)
+            context = StaffView(name: name, bio: bio, allNames: bios.keys.sorted())
         } else {
-            context = StaffView()
+            context = StaffView(allNames: bios.keys.sorted())
         }
 
         //render the template with whatever we have
