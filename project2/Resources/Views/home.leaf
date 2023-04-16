@@ -1,6 +1,7 @@
-<html>
-<body>
-  <h1>Welcome to Million Hairs</h1>
-#extend("footer")
-</body>
-</html>
+#extend("master"):
+    #export("body"): <p>Million Hairs is a leading veterinary surgery - we just love animals!</p> #endexport
+
+    #export("h1"): Welcome to Million Hairs #endexport
+
+    #export("title"): Welcome #endexport
+#endextend
