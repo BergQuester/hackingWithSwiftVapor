@@ -1,7 +1,7 @@
-<html>
-<body>
-<h1>Get in touch</h1>
-<p>Call us on 55501234.</p>
-#extend("footer")
-</body>
-</html>   
+#extend("master"):
+    #export("body"): <p>Call us on 55501234.</p> #endexport
+
+    #export("h1"): Get in touch #endexport
+
+    #export("title"): Contact #endexport
+#endextend
